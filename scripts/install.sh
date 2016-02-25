@@ -29,11 +29,12 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 curl -fLo "$CONFIG_HOME"/nvim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# create the symlinks
+./"$CONFIG_HOME"/scripts/link.sh
+
 # change default shell to zsh
 chsh -s /bin/zsh
 
-# create the symlinks
-./"$CONFIG_HOME"/scripts/link.sh
 
 # additionals softwares
 ## languages
