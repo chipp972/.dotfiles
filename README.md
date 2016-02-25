@@ -17,3 +17,7 @@ rm -rf .dotfiles
 *   set an option to install the config on systems
     I don't own (detection of tmux, zsh, vim or nvim etc.)
 *   ask for languages to use and download only the right plugins
+*   add configurations for vim plugins + snippets + syntax
+*   find a way to auto update and download vim plugins
+*   list all shortcuts
+
