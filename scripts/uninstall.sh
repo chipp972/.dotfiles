@@ -1,9 +1,10 @@
 #!/bin/bash
 
-rm $HOME/.z*
-rm $HOME/.gitconfig
-rm $HOME/.tmux.conf
-rm -r $HOME/.dotfiles
+rm -f $HOME/.z*
+rm -f $HOME/.gitconfig
+rm -f $HOME/.tmux.conf
+rm -rf $HOME/.zprezto
+rm -rf $HOME/.dotfiles
 
 
 

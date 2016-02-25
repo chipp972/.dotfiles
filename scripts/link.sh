@@ -3,6 +3,8 @@
 
 CONFIG_HOME=$HOME/.dotfiles
 
+rm -f $HOME/.gitconfig $HOME/.zshrc
+
 setopt EXTENDED_GLOB
 for rcfile in "$CONFIG_HOME"/rcfiles/^README.md(.N)
 do
