@@ -1,0 +1,36 @@
+[user]
+	email = pierrecharles.nicolas@gmail.com
+	name = Pierre-Charles Nicolas 
+[push]
+	default = simple
+[core]
+	editor = nvim
+	excludesfiles = /home/chipp/.gitignore
+	quotepath = false
+	pager = less -RS
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	st = status
+	b = branch
+	pl = pull
+	ps = push
+	df = diff
+	co = checkout
+	l = log --pretty=oneline -n 20 --graph --abbrev-comit
+	la = log --color --graph --online --decorate --all --
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = gree,
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+	
