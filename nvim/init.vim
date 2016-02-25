@@ -1,3 +1,11 @@
+" ######################
+"                      #
+"                      #
+" PLUGIN INSTALLATION  #
+"                      #
+"                      #
+" ######################
+
 call plug#begin('~/.dotfiles/nvim/plugged')
 
 " description
@@ -39,8 +47,16 @@ Plug 'zchee/deoplete-jedi'
 " theme
 Plug 'tomasr/molokai'
 
-" end of plugin loading
 call plug#end()
+
+
+" ######################
+"                      #
+"                      #
+" PLUGIN CONFIGURATION #
+"                      #
+"                      #
+" ######################
 
 let mapleader=" "
 
@@ -60,7 +76,7 @@ set expandtab
 " theme
 let g:rehash256 = 1
 
-" autocompletion
+" autocompletion configuration
 let g:deoplete#enable_at_startup = 1
 
 " nanvigation
