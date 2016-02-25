@@ -30,7 +30,7 @@ curl -fLo "$CONFIG_HOME"/nvim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # create the symlinks
-./"$CONFIG_HOME"/scripts/link.sh
+"$CONFIG_HOME"/scripts/link.sh
 
 # change default shell to zsh
 chsh -s /bin/zsh
@@ -50,4 +50,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME"/.fzf
 sudo apt-get upgrade
 sudo apt-get update
 
-
+# end message
+echo "Installation done"
+echo "Please logout for changes to take effect"
+echo "Use PlugInstall and UpdateRemotePlugins in nvim to get plugins working"
