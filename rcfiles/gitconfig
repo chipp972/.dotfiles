@@ -4,8 +4,7 @@
 [push]
 	default = simple
 [core]
-	editor = nvim
-	excludesfiles = /home/chipp/.gitignore
+	editor = vim
 	quotepath = false
 	pager = less -RS
 [diff]
