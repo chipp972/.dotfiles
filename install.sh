@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_HOME=$HOME/.dotfiles
+CONFIG_HOME="$(dirname -z $0)"
 
 # create the symlinks
 "$CONFIG_HOME"/scripts/link.sh
