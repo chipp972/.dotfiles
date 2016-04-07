@@ -1,5 +1,6 @@
 packages: [
   "advanced-open-file"
+  "atom-bootstrap3"
   "api-docs"
   "atom-alignment"
   "atom-terminal"
@@ -8,6 +9,7 @@ packages: [
   "bottom-dock"
   "browser-plus"
   "docblockr"
+  "file-icons"
   "git-plus"
   "highlight-line"
   "highlight-selected"
@@ -19,6 +21,7 @@ packages: [
   "package-sync"
   "pdf-view"
   "project-manager"
+  "process-palette"
   "python-jedi"
   "python-tools"
   "remote-edit"
