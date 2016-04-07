@@ -1,0 +1,143 @@
+"*":
+  "advanced-open-file":
+    createFileInstantly: true
+    defaultInputValue: "Project root"
+  "api-docs":
+    _theme: "Dark"
+    c: true
+    css: false
+    "django~1":
+      "8": true
+      "9": true
+    dom: false
+    dom_events: false
+    git: true
+    go: true
+    html: true
+    http: false
+    javascript: false
+    markdown: true
+    mocha: true
+    node: true
+    "node~4_lts": true
+    npm: true
+    python2: true
+    "python~3":
+      "5": true
+  "atom-alignment": {}
+  "atom-terminal":
+    app: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
+    surpressDirectoryArgument: false
+  "autoclose-html": {}
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+  "autocomplete-python":
+    pythonExecutable: "python2"
+    pythonPath: "C:\\Anaconda2\\python.exe"
+  "bottom-dock": {}
+  "browser-plus": {}
+  build:
+    scrollOnError: true
+    stealFocus: false
+  "build-tools": {}
+  core:
+    audioBeep: false
+    autoHideMenuBar: true
+    disabledPackages: [
+      "dev-live-reload"
+      "spell-check"
+      "javascript-snippets"
+      "language-objective-c"
+      "linter-shellcheck"
+    ]
+    openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "project-manager"
+      "process-palette"
+      "atom-terminal"
+      "highlight-line"
+      "api-docs"
+      "bottom-dock"
+      "fuzzy-finder"
+      "open-on-github"
+      "linter"
+      "snippets"
+      "multi-cursor"
+      "line-jumper"
+      "markdown-preview"
+      "autoclose-html"
+    ]
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  docblockr: {}
+  editor:
+    backUpBeforeSaving: true
+    invisibles: {}
+    showIndentGuide: true
+    softWrapAtPreferredLineLength: true
+    tabLength: 2
+  "exception-reporting":
+    userId: "7d65b420-483f-76a0-cca0-cd624467c6c3"
+  "find-and-replace": {}
+  "fuzzy-finder":
+    preserveLastSearch: true
+    searchAllPanes: true
+  "git-diff":
+    showIconsInEditorGutter: true
+  "git-plus": {}
+  "highlight-line":
+    hideHighlightOnSelect: true
+  "highlight-selected": {}
+  jumpy: {}
+  "line-ending-selector":
+    defaultLineEnding: "LF"
+  "line-jumper": {}
+  linter:
+    errorPanelHeight: 127
+    showErrorTabLine: true
+  "linter-gcc":
+    execPath: "C:\\msys64\\usr\\bin\\gcc.exe"
+    gccDefaultCFlags: "-W -Wall -std=c99"
+    gccIncludePaths: "., ./include"
+  "linter-pylint":
+    pythonPath: "C:\\Python27\\python.exe"
+  "local-history": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  "one-dark-ui": {}
+  "open-terminal-here":
+    command: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
+  "package-sync":
+    forceOverwrite: true
+  "pdf-view": {}
+  "project-manager":
+    sortBy: "group"
+  "python-jedi":
+    enablePython2: true
+  "remote-edit":
+    storePasswordsUsingKeytar: true
+  "remote-sync": {}
+  "symbols-tree-view": {}
+  "todo-show": {}
+  "trailing-spaces":
+    enableForIndentation: true
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+".basic.html.text":
+  editor:
+    tabLength: 2
+".html.jsp.text":
+  editor:
+    tabLength: 2
+".java-properties.source":
+  editor:
+    tabLength: 2
+".java.source":
+  editor:
+    tabLength: 2
+".junit-test-report.text":
+  editor:
+    tabLength: 2
