@@ -107,8 +107,6 @@
   "markdown-preview":
     useGitHubStyle: true
   "one-dark-ui": {}
-  "open-terminal-here":
-    command: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
   "package-sync":
     forceOverwrite: true
   "pdf-view": {}

@@ -16,7 +16,6 @@ packages: [
   "linter-pylint"
   "local-history"
   "multi-cursor"
-  "open-terminal-here"
   "package-sync"
   "pdf-view"
   "project-manager"
