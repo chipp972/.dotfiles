@@ -102,7 +102,7 @@
     gccDefaultCFlags: "-W -Wall -std=c99"
     gccIncludePaths: "., ./include"
   "linter-pylint":
-    pythonPath: "C:\\Python27\\python.exe"
+    pythonPath: "C:\\Python27_32\\python.exe"
   "local-history": {}
   "markdown-preview":
     useGitHubStyle: true
@@ -111,6 +111,7 @@
     forceOverwrite: true
   "pdf-view": {}
   "project-manager":
+    closeCurrent: true
     sortBy: "group"
   "python-jedi":
     enablePython2: true
