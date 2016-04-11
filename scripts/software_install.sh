@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # install the softwares
-sudo apt-get install make cmake tig tmux zsh python npm
-sudo apt-get install python-dev python-pip python3-dev python3-pip python2.7
+sudo apt-get install make cmake tig tmux zsh python nodejs npm -y
+sudo apt-get install python-dev python-pip python3-dev python3-pip python2.7 -y
+sudo apt-get install openssh-server -y
 
 # install nvim
 IS_UBUNTU=$(uname -a | grep ubuntu -i)
