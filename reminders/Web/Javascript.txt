@@ -1,0 +1,109 @@
+input/output
+	- var text = prompt(titleOfBox); // ouvre une boite de dialogue qui permet � l'utilisateur de rentrer une string stock�e dans text
+	- alert(variable); // boite de dialogue
+	- confirm(variable); // boite de dialogue text = variable + choix -> renvoie true ou false suivant le choix
+	- document.write(variable); // vide la page html et n'�crit que le contenu indiqu�
+	- document.getElementById(id).innerHTML = variable // ajoute le code entre les balises html ayant l'Id id
+	- console.log(variable); // log accessible en appuyant sur F12
+
+variable
+	- var name; // la variable contient undefined � la base
+	- 3 types : num�rique (0-9)*, text ('blabla' ou "blabla") et boolean (true ou false)
+	- typeof variable renvoie number, string, boolean ou undefined
+	- op�rations num : + - * / % += -= *= ++ --...
+	- concat�nation : "blabla" + " " + stringVar + "bla";
+	- var varNum = parseInt(varText); // conversion string -> number
+	- var varText = varNum + ''; // conversion number -> string
+	- var result = varNum + varText; // le resultat est une string
+
+math
+	- Math.floor(Math.random() * (max - min + 1)) + min; // random number
+
+condition & boucle
+	- ==, !=, >, <, <=, >=, &&, ||, !, if...else if...else, switch...
+	- === : contenu et type �gal �
+	- !== : contenu ou type diff�rent de
+	- ternaire : resultFinal = varBool ? result1 : result2; // resultFinal = result1 si varBool = true et result2 sinon
+
+	- while, do...while, for(init1, init2...; condition; incr1, incr2...), break, continue
+	- for(var i in myObj) {code} // permet de parcourir un objet litteral
+
+fonction
+	- function myFunction(args) {code}
+	- function (arg) {code} // fonction anonyme
+	- var result = function (arg) {code}; // assignement du return d'une fonction anonyme � une variable
+	- var optionalRes = (function optFuncName(args) { //code
+	})(givenArgsFromExternalContext); // Immediately-Invoked Function Expression (IIFE)
+
+Propri�t�s de Function
+	- Function.length // le nb d'arguments attendus par la fonction
+	- arguments.length // nombre d'arguments pass�s � la fonction
+	- Function.prototype.constructor // voir constructor dans objet
+	- Function.protype.apply(thisContext, arrayArgs) // thisContext peut �tre mis � null ou undefined si la fonction n'a pas besoin de contexte (de this).
+	- Function.protype.call(thisContext, arg1, arg2...)
+	- Function.prototype.bind(?) // ?
+	- Function.prototype.toString() // renvoie la string du contenu de la fonction
+
+array
+	- var arr = []; // tableau vide
+	- var arr = ['S�bastien', 'Laurence', 'Ludovic']; // m�thode d'initialisation; on peut �galement m�langer les types
+	- arr[0] // obtenir l'item 0 du tableau
+	- arr[arr.length] = item; // ajoute � la fin + rapidement
+	- arr.push(item0, item1, ...) // ajoute � la fin plusieurs items
+	- arr.unshift (ajoute au d�but), arr.pop (supprime le dernier item), arr.shift (supprimer le premier item)
+	- arr.join(c); // return une string � partir du tableau en mettant le caractere c entre chaque item
+	- arr.length; ou arr['length']; // permet d'obtenir la taille du tableau
+	- arr.splice(index,howManyDelete,itemToAdd1,.....,itemToAddX);
+	- arr.length = 0; // vide le tableau
+	- Array.prototype.push.apply(array1, array2); // append
+	- arr.indexOf(item); // renvoie l'index de item ou -1
+
+objet String
+	- var s = ""; // cr�ation d'une string vide
+	- s.length, s.toUpperCase(), s.toLowerCase(),
+	- s.split(caractere); // return un tableau en divisant la String suivant le caractere donn� (qui sera retir�)
+	- s.charAt(i); // renvoie le caract�re � l'index i
+	- s.slice(0, -1); // renvoie s sans le dernier caract�re
+	- s.search(/azeg/); // renvoie la position de l'expression dans la chaine s ou -1
+
+objet Date
+	- var d = new Date(); // est initialis�e � la date actuelle
+
+objet anonymes
+	- var obj = {}; // objet vide
+	- var obj = { item1 : 'Texte', item2 : num };
+	- obj.item1; ou obj['item1']; // acc�s � l'item1 de myObj ('Texte') => permet d'utiliser une variable
+	- obj.item3 = 'blabla'; // ajout d'un item; possible aussi avec myObj['item3'] = 'blabla';
+
+objet
+	- function className(p1,p2..) { this.attr1 = p1; this.attr2 = p2; }
+	// object constructor
+	- var className = function(p1,p2..) ... // equivalent
+	- className.prototype.newMethod1 = function(args) {..}; // add method
+	- obj.methode1(p1,p2..) <=> methode1.call(obj, p1,p2..)
+	// tout objet a un contexte d'ex�cution associ� (+ contexte global)
+	- obj instanceof proto; // check si le prototype de obj est proto et return bool
+
+heritage
+	- function classeFille(p1,p2...) {
+		classeMere.call(this, p1, p2); // super(p1, p2);
+		... (auttres inits)
+	}
+	classeFille.prototype = Object.create(classeMere.prototype);
+	classeFille.prototype.constructor = classeFille;
+
+Propri�t�s de Object
+	- obj.constructor // renvoie le nom de la fonction appel�e initialement (peut-�tre modifi�)
+	- Object.keys(obj); // renvoie ['prop1', 'prop2'...]
+	- Object.create(proto, optionalProps) // renvoie un objet dont le prototype est proto et auquel on ajoute les propri�t�s optionalProps
+	- Object.prototype.getPrototypeOf(obj); // return le nom du prototype h�rit� pour cr�er l'objet (Object si il n'y en a pas)
+
+	- Object.defineProperty(obj, "prop", desc);
+	descDonnee = { enumerable: bool, configurable: bool, value: v, writable: bool}
+	descAcc = { enumerable: bool, configurable: bool, get: fun, set: fun(v) }
+	- Object.defineProperties(obj, {"prop1": {desc}, "prop2": {desc}...});
+	src : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/defineProperty
+
+	- Object.preventExtensions(obj); // emp�che l'ajout de m�thode � l'instance obj (m�me en passant par obj.__proto__) mais pas � son prototype. On peut toujours delete des propri�t�s de obj.
+	- Object.seal(obj); // emp�che tout ajout, modification et suppression de propri�t� (on peut toujours modifier le contenu des attributs et utiliser les m�thodes)
+	- Object.freeze(obj); // emp�che toute modification de l'objet

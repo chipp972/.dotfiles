@@ -1,0 +1,75 @@
+# Makefile #
+
+#### Variables ####
+*   NAME=VALUE : define a new variable
+*   $(NAME) : to access variable with name NAME
+
+#### Conventional Variables ####
+*   CC/CXX : compiler
+*   CFLAGS/CXXFLAGS : compiling options
+*   (exemple : -W -Wall -std=c99 -pedantic)
+*   LDFLAGS : flags for the link edition
+*   EXEC : the executable files
+
+#### Internal Variables ####
+*   $@ : Target name
+*   $< : First dependency's name
+*   $^ : all dependency
+*   $? : all dependency more recent than the target
+*   $* : file name without suffix
+
+#### Special Variables ####
+*   ```
+	VAR = $(VAR1:.c=.o)
+	```
+	for each .c file in VAR1 add a .o file in VAR
+*   ```
+	VAR = $(wildcard path/to/dir/*.c)
+	```
+	VAR contains all .c files in the directory specified
+
+
+#### Rule Construction ####
+```
+target: dependency
+	command1 && command2
+	commande3
+	@silent_command
+```
+Note : Each command is executed in a different process so if
+you want to compose commands you must use && or | or > or >>
+
+#### Inference Rules ####
+```
+%.o: %.c
+	commands
+```
+For each .o this rule will execute the commands if the .c doesn't exist
+
+#### Conventional Rules ####
+```
+all : $(EXEC)
+
+clean:
+	rm -rf *.o
+<br/>
+cleanall: clean
+	rm -rf $(EXEC)
+```
+
+#### .PHONY ####
+its dependency are always reconstructed. A good use for exemple :
+```
+.PHONY : clean cleanall
+```
+
+#### Conditions ####
+```
+ifeq ($(DEBUG), yes)
+CFLAGS=-W -Wall -ansi -pedantic -g
+	LDFLAGS=
+else
+	CFLAGS=-W -Wall -ansi -pedantic
+	LDFLAGS=
+endif
+```

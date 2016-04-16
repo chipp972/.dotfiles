@@ -1,0 +1,20 @@
+# Bash #
+
+## Flow Control ##
+
+Tests :
+```
+test "Hello World" = "Hello World"
+or
+[ "Hello World" = "Hello World" ]
+```
+
+Conditions:
+
+Loops:
+```
+while [ test ];
+do
+
+done
+```

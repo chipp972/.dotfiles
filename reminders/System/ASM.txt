@@ -1,0 +1,5 @@
+# Assembly Macros for C #
+
+## When to use ##
+
+https://msdn.microsoft.com/en-us/library/352sth8z.aspx

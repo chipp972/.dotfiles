@@ -1,0 +1,42 @@
+# script to initialize my atom build after installing on another machine
+
+apm install advanced-open-file@0.14.1
+apm install atom-bootstrap3@1.2.12
+apm install atom-terminal@0.8.0
+apm install autoclose-html@0.19.0
+apm install autocomplete-python@1.2.4
+apm install bottom-dock@0.3.7
+apm install docblockr@0.7.3
+apm install es6-javascript@0.5.0
+apm install file-icons@1.6.13
+apm install highlight-line@0.11.0
+apm install highlight-selected@0.11.1
+apm install javascript-snippets@1.0.0
+apm install jumpy@2.0.10
+apm install line-jumper@0.14.1
+apm install linter@1.11.3
+apm install linter-bootlint@1.0.0
+apm install linter-coffeelint@1.1.2
+apm install linter-gcc@0.5.11
+apm install linter-htmlhint@0.2.2
+apm install linter-javac@1.4.0
+apm install linter-jshint@1.2.2
+apm install linter-jsonlint@1.1.4
+apm install linter-manager@0.2.8
+apm install linter-pylint@1.2.0
+apm install linter-tidy@1.0.1
+apm install local-history@3.2.3
+apm install monokai@0.18.0
+apm install multi-cursor@2.1.2
+apm install open-html-in-browser@0.1.0
+apm install open-in@4.0.0
+apm install pdf-view@0.38.0
+apm install process-palette@0.6.0
+apm install project-manager@2.6.5
+apm install python-jedi@0.3.6
+apm install remote-sync@3.5.0
+apm install Sublime-Style-Column-Selection@1.3.0
+apm install todo-show@1.3.0
+apm install trailing-spaces@0.3.2
+
+# cp keymap

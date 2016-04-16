@@ -1,0 +1,22 @@
+# GIT #
+
+## Starting ##
+*   git init : start a repo in the current directory
+*   git clone url : clone the repo from the url specified
+
+## Informations ##
+*   git status : Show changes
+
+## Adding ##
+*   git add path/to/file : add file
+*   git add -A : add all new files
+*   git commit -m "message" : commit changes
+*   git push : push to the current branch
+*   git branch name : create a new branch with the name specified
+
+## Suppress ##
+*   git rm path
+*   git mv pathSrc pathDst
+
+## Revert ##
+*   git reset --hard origin/master : reset the directory to the current master

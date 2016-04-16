@@ -1,0 +1,122 @@
+[Best Practice]
+  - group files based on feature rather than type or role. It should reflect the architecture. {
+    app/
+      app.js
+      index.html
+      feed/
+          _feed.html
+          FeedController.js
+          FeedEntryDirective.js
+          FeedService.js
+      login/
+          _login.html
+          LoginController.js
+          LoginService.js
+      notes/
+          NotesController.js
+          NotesModel.js
+          NotesService.js
+      shared/
+          CapatalizeFilter.js
+  }
+  - it's better to create modules for each features to reuse them accross the app {
+    var sharedServicesModule = angular.module('sharedServices',[]);
+    sharedServices.service('NetworkService', function($http){});
+
+    var loginModule = angular.module('login',['sharedServices']);
+    loginModule.service('loginService', function(NetworkService){});
+    loginModule.controller('loginCtrl', function($scope, loginService){});
+
+    var app = angular.module('app', ['sharedServices', 'login']);
+  }
+  - for minified code : dependency injection like this {
+    app.controller('MainCtrl', ['$scope', '$timeout', function($scope, $timeout) {
+      $timeout(function(){
+          console.log($scope);
+      }, 1000);
+    }]);
+  }
+
+[Core Directives]
+  - <div ng-app="module"></div> : initialise the angularJs application and wrap it into a block
+  - <input type="number" ng-model="var"> : bind the variable var to the input element
+  - <li ng-repeat="x in var"> {{ x }} </li> : repeat the block for each item of the var (an array or an object).
+  - <button ng-disabled="mySwitch">Click Me!</button> : mySwitch = true => button disabled; mySwitch = false => button enabled
+  - <p ng-show="var">Haha</p> : if var = true => visible else not visible
+  - <p ng-hide="var">Haha</p> : if var = true => not visible else visible
+  - <button ng-click="expr">click</button> : evaluate expression upon click; expr can be func().
+  - <div ng-include="'path/to/file.html'"></div> : ajoute le contenu du fichier entre les balises.
+
+[Expression]
+  - {{ var }} : will resolve var in the model and display the content of var
+  --> numbers : {{ var1 * var2 }}
+  --> strings : {{ var1 + ' ' + var2 }}
+  --> objects : {{ obj.var }}
+  --> arrays  : {{ arr[0] }}
+  - <span ng-bind="var1 + ' ' + var2"></span> : equivalent to {{ var1 + ' ' + var2 }}
+
+[Filter]
+  - Transform data in a directive or expression :
+    -> {{ (quantity * price) | currency }} : Format a number to a currency format (money)
+    -> <li ng-repeat="x in var1 | filter:var2"> :	Select only the items from array var1 containing var2.
+    -> <li ng-repeat="x in var | orderBy:'expr'"> : Orders an array by an expression.
+    -> {{ lastName | uppercase }} : Format a string to upper case.
+    -> {{ lastName | lowercase }} : Format a string to lower case.
+
+[Core Services]
+  - $http.get(url).success(function(data) {...}); : get JSON data from an external server
+
+[Core Functions]
+  - angular.copy(src, dest); : dest must have the same type as src if provided. Return the copy or dest.
+  - angular.extend(objDest, objSrc1, objSrc2...); : Copy enumerable properties of objSrc1, objSrc2 etc. in ObjDest and returns a ref to objDest. Not a deep copy.
+  - angular.merge(objDest, objSrc1, objSrc2...); : same as extend but deep copy.
+
+
+[Module]
+- Define an application or contain a part of it.
+A module is a collection of configuration and run blocks (executed right after the configuration)
+which get applied to the application during the bootstrap process.
+A module is loaded only once (config block + run block) even if multiple modules needs it.
+
+
+var app = angular.module("app", []); The [] is used to put needed modules. --> app.js
+<div ng-app="app" ng-controller="mainController"> ... </div> --> index.html
+
+var moduleName = angular.module('moduleName', ['dependency1', ...]).
+  config(function($provide, $compileProvider, $filterProvider) {
+    $provide.value('a', 123);
+    $provide.factory('a', function() { return 123; });
+    $compileProvider.directive('directiveName', ...);
+    $filterProvider.register('filterName', ...);
+  }).
+  run(function(injectables) { // instance-injector
+    // This is an example of a run block.
+    // You can have as many of these as you want.
+    // You can only inject instances (not Providers like in the config block)
+  });
+
+// add services and directives to the module after its creation
+moduleName.service('serviceName', ...);
+moduleName.directive('directiveName', ...);
+
+[Controller]
+  - Controllers are meant to define your scope variables and encapsulate view related logic.
+  Don’t use controllers for DOM interactions or data manipulation.
+  All controller should belong to a module.
+  Controllers should contain the buisness logic needed for a single view and rely on services.
+
+  moduleName.controller('moduleNameController', ['$scope', '$var2', function($scope, $var2) {
+    $scope.var1 = "John";
+    $scope.var2 = 9;
+    $scope.fun1 = function() { ... can use $scope and angular functions here ...}
+  }]);
+  --> ModuleNameController.js
+
+[Service]
+- moduleName.factory('serviceId', function() {
+    var shinyNewServiceInstance;
+    // factory function body that constructs shinyNewServiceInstance
+    return shinyNewServiceInstance;
+  }); --> create a factory function that will instansiate the service. The service is registred to the module moduleName.
+
+[Template]

@@ -1,0 +1,49 @@
+# Web Project #
+
+## npm + Gulp + git ##
+browserify + webpack
+project structure
+config files
+
+package.json
+gulpfile.js
+app.js
+vendor/
+src/
+obj/
+test/
+
+makefile
+make a script that's add dependecies in function of imports in the html
+to have a make command for dev and a make for prod
+
+## Sass ##
+
+## Coffee ##
+
+http://tarantsov.com/WorkflowThu/source-maps-with-coffeescript-and-uglify-js/
+http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/#npmscripts
+http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/
+https://gist.github.com/lox/8910898 // Makefile exemple
+https://medium.com/@housecor/browserify-vs-webpack-b3d7ca08a0a9#.is5s69qak // webpack
+http://webpack.github.io/docs/code-splitting.html
+
+# System #
+
+## Project Structure ##
+
+Makefile
+include/
+bin/
+lib/
+src/
+obj/
+test/
+
+# Java #
+
+Makefile
+bin/
+lib/
+src/
+test/

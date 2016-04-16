@@ -1,0 +1,452 @@
+=======
+GENERAL
+=======
+
+
+cout << "message console";
+cout << nomVariable;
+cout << endl; : saut de ligne dans la console
+
+cin >> variable;
+getline(cin, variable); pour les string contenant des espaces
+
+// commentaires
+/* commentaires */
+
+
+#include "nomFichier.h/cpp" : inclure un fichier perso
+
+Mettre dans chaque fichier.h :
+
+#ifndef FICHIER_H_INCLUDED
+#define FICHIER_H_INCLUDED
+//tous les prototypes utiles pour le fichier
+std::string variable; // pour les objets, en ayant inclus <string> auparavant dans le code
+#endif
+
+
+
+Variables
+---------
+bool : true ou false
+char : lettres (char lettre('a'))
+int : nombres entiers
+unsigned int : nombres entiers positifs
+double : nombres décimaux
+string : chaine de caractères (pas oublier #include <string>)
+
+type nomVariable(valeur), nomVariable(valeur);
+type& nomReference(nomVariable); : créer un alias qui fait référence à nomVariable
+type const variable(valeur); : créer une constante
+type const& reference : utiliser une reference constante en paramètre
+
+&nomVariable retourne l'adresse de nomVariable
+type *pointeur(0); déclaration de pointeur // l'adresse 0 et pas NULL comme en C
+pointeur = &maVariable;
+*pointeur : valeur de maVariable
+pointeur : adresse de maVariable
+
+type* variable = (type*) fonction_qui_renvoie_void*(); //conversion ou cast
+type variable = (type) variable1/variable2; //idem
+dans l'ordre : opération sur les variables, cast puis affectation
+donc si on veut garder la précision, on doit caster chaque variable avec le bon type :
+type variable = (type) variable1/ (type) variable2;
+
+Allocation dynamique de mémoire
+-------------------------------
+type *pointeur(0); 
+pointeur = new type; ou pointeur = new type[taille]; ou pointeur = new class(param1, param2);
+
+*pointeur = valeur; //utilisation de l'espace mémoire
+
+delete pointeur; ou delete[] pointeur; //libération de la mémoire
+pointeur = 0; //réinitialisation du pointeur
+
+
+Opérations
+----------
+a = b (affectation)
+a = b + c
+a = b - c
+a = b*c
+a = b/c
+a = b%c
+a++
+a--
+a+=1
+a*=2
+etc.
+
+
+Conditions
+----------
+==, >, <, !=, >=, <=, && (et), || (ou), ! (non)
+if (variable < variable2)
+{
+	instructions;
+}
+else if (variable > variable3)
+{
+	instructions;
+}
+else
+{
+	instructions;
+}
+
+switch(variable)
+{
+	case 0:
+		instructions;
+		break;
+	default:
+		instructions;
+		break;
+}
+
+variable = (variable > variable2) ? true : false;
+
+
+Boucles
+-------
+while(condition)
+{
+	instructions;
+}
+
+do
+{
+	instructions;
+} while(condition);
+
+for (int i(0) ; i < variable ; i++)
+{
+	instructions;
+}
+
+break; permet de sortir de la boucle sans effectuer le reste
+
+
+Les fonctions
+-------------
+type nomFonction(type argument, type argument)
+{
+    //Instructions effectuées par la fonction
+	return (si type != void)
+}
+
+Deux fonctions peuvent avoir le même nom 
+si leurs arguments sont différents.
+
+nomFonction(argument1, argument2); : utilisation de la fonction
+
+Utiliser des références permet de modifier les vrais variables :
+type nomFonction(type& argument)
+{
+	// modification des vrais arguments
+}
+
+Pour donner des valeurs par défaut à des arguments :
+type nomFonction(type argument = valeurParDefaut); (prototype uniquement)
+Toujours mettre les paramètres facultatifs à droite
+
+
+Tableaux
+--------
+***tableaux statiques :
+type nomTableau[taille]; (taille est une constante)
+nomTableau[numeroCase] : accéder au tableau
+
+passer un tableau à une fonction :
+type fonction(type nomTableau[], int tailleTableau)
+{
+}
+type tableau[taille][taille]; : tableau à 2 dimensions
+
+***tableaux dynamiques :
+(pas oublier #include <vector>)
+vector<type> nomTableau(taille, valeurParDefautPartout);
+nomTableau.push_back(valeurCaseSupplementaire); : ajouter une case
+nomTableau.pop_back(); : supprimer une case
+nomTableau.size(); : retourne la taille du tableau
+
+
+Utilisation de fichiers
+-----------------------
+(pas oublier #include <fstream>)
+***Ecrire :
+ofstream monFlux; : flux permettant d'écrire dans un fichier
+string fichier("addresseDuFichier");
+monFlux.open(fichier.c_str()); (crée le fichier)
+if !(monFlux)
+	cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
+else
+{
+	// reste du programme
+}
+monFlux.close();
+
+monFlux << "blabla"; monFlux << variable; etc.
+
+monFlux.open(fichier.c_str(), ios::app); : ajoute à la fin du fichier
+
+int position = monFlux.tellp(); : retourne le numéro de caractère du curseur
+
+***Lire :
+ifstream monFlux; : flux permettant de lire un fichier
+getline(monFlux, line); : stock une ligne du fichier dans la variable line
+monFlux >> variable : stock un mot dans la variable (traduit suivant le type)
+monFlux.get(lettre); : stock dans la variable lettre un caractère du fichier lu
+if(monFlux) permet de savoir si on est à la fin du fichier
+
+int position = monFlux.tellg(); : retourne le numéro du caractère du curseur
+
+***Astuces :
+string fichier("addresse");
+ifstream/ofstream monFlux(fichier.c_str());
+monFlux.close(); est facultatif si on ferme le fichier à la fin de la fonction
+
+Se déplacer dans un fichier :
+flux.seekg/p(nombreCaracteres, position); (position = ios::beg, ios::end, ios::cur)
+
+Connaitre la taille d'un fichier :
+flux.seekg/p(0, ios::end);
+int tailleFichier = flux.tellg/p();
+
+remove("chemin_de_mon_truc_a_effacer"); : suppr un fichier
+
+
+=========================
+LES CLASSES ET LES OBJETS
+=========================
+
+***Faire une classe
+class NomClass
+{
+	public : // met tout ce qui suit accessible hors de l'objet
+	type fonction(type parametres) //methode
+	{
+	}
+	private : // met tout ce qui suit inaccessible hors de l'objet
+	type variable; // attribut
+};
+
+Dans un fichier class.h :
+class NomClass
+{
+	public :
+	NomClass(); //le constructeur par défaut
+	NomClass(std::string parametre1, int parametre2); // le 2e constructeur
+	type nomFonction1(parametres); // prototype de la methode 1
+	type nomFonction2(parametres);
+	~NomClass(); // le destructeur
+	double getAttribut1(); // methode qui permet de recupérer la valeur de l'attribut1 privé
+
+	private :
+	double attribut1;
+	int attribut2;
+	std::string attribut3; //pas oublier std:: pour les types non conventionnels
+	NomClass2 objet; // ajouter un objet dans une classe
+};
+
+dans le fichier class.cpp correspondant :
+
+NomClass::NomClass() // constructeur par défaut
+{
+	attribut1 = valeur;
+	attribut2 = valeur2;
+	attribut3 = "valeur3";
+}
+
+Liste d'initialisation (autre manière de faire le constructeur par défaut) :
+NomClass::NomClass() : attribut1(valeur), attribut2(valeur), attribut3("valeur"), objet()
+{
+	//on peut mettre le ptr à 0 dans la liste d'init et faire l'alloc dans le constructeur
+	ptr = new class();
+}
+(utiliser les listes lorsqu'il n'y a aucune opération à faire)
+
+Liste d'initialisation avec un objet :
+NomClass::NomClass(string parametre1, int parametre2) : objet(parametre1, parametre2)
+{
+}
+
+NomClass::NomClass(std::string parametre1, int parametre2) // 2e constructeur
+{
+	attribut1 = valeur;
+	attribut2 = parametre2;
+	attribut3 = "parametre1";
+}
+
+type NomClass::nomFonction1(parametres) //methode1
+{
+	//définition de nomFonction1 correspondant au prototypeDeMethode1
+}
+
+type NomClass::getAttribut1() const //précise que l'objet qui utilise cette méthode ne sera pas modifié
+{
+	return attribut1;
+}
+
+NomClass::~NomClass()
+{
+	// On delete tous les pointeurs pour les allocations dynamiques
+	delete ptr;
+	ptr = 0;
+
+}
+
+***Utiliser un objet
+NomClass objet1, objet2(parametre1, parametre2); //objet1 utilise le constuct. par défaut
+objet.methode(); // appel d'une méthode
+
+
+***Surcharge d'Opérateurs arithmétiques entre objets
+Pour additionner deux objets sous la forme obj1 + obj2 :
+class operator+(class const& a, class const& b) //définir la méthode suivante dans l'objet
+
+Pour ajouter un objet du meme type à l'objet lui meme (+=) :
+Duree& operator+=(Duree const& duree) : renvoie une reference sur l'objet
+
+On peut utiliser les attributs de la classe  car on est dans une méthode de la classe
+
+
+***Surcharge d'Operateurs de flux :
+les opérateurs de flux sont définis par défaut que pour les types :
+int, double, char, string...
+ostream& operator<<(ostream &flux, class const& a)
+{
+    flux << duree.m_heures << "h" << duree.m_minutes << "m" << duree.m_secondes << "s";
+    return flux;
+}
+
+***Surcharge d'Opérateurs de comparaison
+bool operator==(Duree const& a, Duree const& b)
+{
+    return a.estEgal(b);
+}
+bool Duree::estEgal(Duree const& b) const
+{
+    //Teste si a.m_heure == b.m_heure etc.  
+    if (m_heures == b.m_heures && m_minutes == b.m_minutes && m_secondes == b.m_secondes)
+        return true;
+    else
+        return false;
+}
+il est aussi possible de surcharger :
+ -  new et delete : l'allocation dynamique, s'il y a besoin de faire des vérifications spéciales lors d'une allocation de mémoire
+ -  & et * : opérateurs d'indirection et de déréférencement pour manipuler les pointeurs
+ -  ++ et -- : opérateurs d'incrémentation et de décrémentation
+ -  [] : pour parcourir l'objet comme un tableau. Le type string s'en sert d'ailleurs pour que l'on puisse écrire monString[3] 
+    et ainsi accéder au 4ème caractère comme si c'était un tableau, alors que c'est en fait un objet. Malin, il fallait y penser !
+ -  etc.
+
+***Constructeur de copie
+class objet2(objet1); ou class objet2 = objet1; permet de créer un objet similaire
+Néanmoins, si il y a des pointeurs, les adresses contenues sont copiées betement
+et lorsqu'on libère la mémoire ça peut créer des erreurs.
+
+class(class const& objet_a_copier) : attribut1(objet_a_copier.attribut1), etc. //on utilise la liste pour copier les attributs simples
+{
+	pointeur = new class(*(objet_a_copier.pointeur)); //si c'est un objet
+	pointeur2 = new type; //si c'est un type de base
+	*pointeur2 = *(objet_a_copier.pointeur2)
+}
+
+***Surcharge d'opérateur : l'opérateur =
+Cette méthode est appelé lorsqu'on écrit "objet = objetACopier;"
+à différencier avec l'appel au constructeur de copie ("class objet = objetACopier;")
+qui ne s'effectue que lorsqu'on crée l'objet.
+class& objet::operator=(class const& objetACopier)
+{
+	if(this != &objetAcopier) //on vérifie que notre objet n'est pas le meme que celui reçu
+	{
+		attribut1 = objetAcopier.attribut1;
+		etc.
+		delete pointeur; //on libère les variable allouées dynamiquement
+		pointeur = new class...ou type... //on crée de nouvelles variables égales à celles de l'objet copié
+	}
+	return *this; //on retourne l'objet lui meme
+}
+
+
+***Pointeur this
+Toutes les classes ont un pointeur : class* this
+qui permet d'avoir l'adresse de l'objet actuel.
+this : adresse de l'objet
+*this : objet lui meme
+
+
+
+
+Heritage :
+----------
+*)
+//permet de créer une class nomClass qui a tous 
+//les attributs et méthodes de nomClass2
+class nomClass : public nomClass2 
+{
+	nouvelleMethode1();
+};
+
+on peut affecter un élement enfant à un élément parent
+exemple :
+monGuerrier = monPersonnage;
+(mais pas l'inverse)
+ou encore utiliser des fonctions et méthodes de l'élément 
+parent sur l'élément enfant
+
+*) Lorsqu'on crée un objet qui hérite d'un autre il faut appeler le constructeur parent :
+
+class::class(type parametre1) : classMere(parametre1), attribut2(valeur), etc.
+{
+}
+
+*) On peut mettre les éléments de l'objet en portée "protected" :
+c'est comme private sauf que les classes filles y ont accès.
+
+
+*) On peut "masquer" des fonctions de la classe parente en créant
+une fonction de même nom dans la classe enfant pour la remplacer.
+
+*) on peut également utiliser des fonctions masquer en donnant leur
+nom complet (classMere::methode1();)
+
+
+
+
+
+
+
+
+
+
+
+=============================
+DIFFERENTES LIBRARY INTEGREES
+=============================
+
+***Library cmath
+(pas oublier #include <cmath>
+resultat = sqrt(nombre);
+sin(), cos(), tan(), exp(), log(), log10()
+fabs() : valeur absolue, floor() : arrondie inférieur
+ceil() :  arrondie supérieur
+pow(nombre, puissance) : nombre^puissance
+
+
+***Library string
+(#include <string>)
+variable[numero] = 'a'; modifier une lettre de la string
+string.size(); : retourne la taille de la string
+variable += string; : permet de rajouter une string à la fin de la 1ere
+variable.erase(A, B); : retire B lettres à partir de la lettre numéro A (non incluse)
+if(chaine1 ==/!= chaine2) : comparaison de chaines qui renvoie true ou false
+variable.substr(a, b) :  coupe la chaine du caractère a (inclus) et garde b caractères
+variable.c_str(); : retourne un pointeur vers le tableau de char correspondant
+
+
+***Library ctime
+(#include <ctime>)
+srand(time(0)); au début du main
+rand() % 5; : retourne un nombre aléatoire entre 0 et 5
