@@ -4,6 +4,7 @@
 [push]
 	default = simple
 [core]
+	autocrlf = true
 	editor = vim
 	quotepath = false
 	pager = less -RS
