@@ -25,6 +25,7 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
+
 'atom-workspace atom-text-editor':
   'ctrl-a': 'editor:move-to-first-character-of-line'
   'ctrl-alt-d': 'api-docs:search-under-cursor'
@@ -93,6 +94,10 @@
 
 'body':
   'ctrl-w': 'unset!'
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-w ctrl-w': 'core:close'
   'ctrl-w n': 'window:focus-next-pane'
   'ctrl-w p': 'window:focus-previous-pane'

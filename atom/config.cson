@@ -4,20 +4,12 @@
     defaultInputValue: "Project root"
   "api-docs":
     _theme: "Dark"
-    c: true
-    css: false
-    "django~1":
-      "8": true
-      "9": true
+    "django~1": {}
     dom: false
     dom_events: false
-    git: true
-    go: true
     html: true
     http: false
-    javascript: false
     markdown: true
-    mocha: true
     node: true
     "node~4_lts": true
     npm: true
@@ -32,8 +24,9 @@
   "autocomplete-plus":
     confirmCompletion: "enter"
   "autocomplete-python":
-    pythonExecutable: "python2"
-    pythonPath: "C:\\Anaconda2\\python.exe"
+    extraPaths: "C:\\Python27_32\\Lib\\site-packages"
+    pythonExecutable: "python"
+    pythonPath: "C:\\Python27_32\\python.exe"
   "bottom-dock": {}
   "browser-plus": {}
   build:
@@ -46,17 +39,17 @@
     disabledPackages: [
       "dev-live-reload"
       "spell-check"
-      "javascript-snippets"
       "language-objective-c"
       "linter-shellcheck"
+      "autocomplete-go"
+      "go-config"
+      "go-get"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "project-manager"
       "process-palette"
-      "atom-terminal"
       "highlight-line"
-      "api-docs"
       "bottom-dock"
       "fuzzy-finder"
       "open-on-github"
@@ -66,6 +59,10 @@
       "line-jumper"
       "markdown-preview"
       "autoclose-html"
+      "atom-terminal"
+      "turbo-javascript"
+      "line-ending-selector"
+      "api-docs"
     ]
     themes: [
       "one-dark-ui"
@@ -97,10 +94,16 @@
   linter:
     errorPanelHeight: 127
     showErrorTabLine: true
+  "linter-docker": {}
+  "linter-eslint":
+    globalNodePath: "C:\\Users\\npcharles\\AppData\\Roaming\\npm"
   "linter-gcc":
     execPath: "C:\\msys64\\usr\\bin\\gcc.exe"
     gccDefaultCFlags: "-W -Wall -std=c99"
     gccIncludePaths: "., ./include"
+  "linter-jshint":
+    executablePath: "C:\\Users\\npcharles\\AppData\\Roaming\\npm\\jshint.cmd"
+    lintInlineJavaScript: true
   "linter-pylint":
     pythonPath: "C:\\Python27_32\\python.exe"
   "local-history": {}
@@ -114,7 +117,10 @@
     closeCurrent: true
     sortBy: "group"
   "python-jedi":
+    Pathtopython: "python"
     enablePython2: true
+  "python-tools":
+    pythonPath: "C:\\Python27_32"
   "remote-edit":
     storePasswordsUsingKeytar: true
   "remote-sync": {}
