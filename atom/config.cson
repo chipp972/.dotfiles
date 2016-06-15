@@ -20,6 +20,9 @@
   "atom-terminal":
     app: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
     surpressDirectoryArgument: false
+  "atom-terminal-panel": {}
+  "atom-typescript":
+    preferredQuoteCharacter: "'"
   "autoclose-html": {}
   "autocomplete-plus":
     confirmCompletion: "enter"
@@ -44,6 +47,12 @@
       "autocomplete-go"
       "go-config"
       "go-get"
+      "language-babel"
+      "language-javascript-jsx"
+      "process-palette"
+      "autocomplete-python"
+      "python-tools"
+      "python-jedi"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -63,6 +72,10 @@
       "turbo-javascript"
       "line-ending-selector"
       "api-docs"
+      "web-view"
+      "atom-terminal-panel"
+      "terminal-status"
+      "web-lookup"
     ]
     themes: [
       "one-dark-ui"
@@ -71,6 +84,7 @@
   docblockr: {}
   editor:
     backUpBeforeSaving: true
+    fontSize: 12
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
@@ -79,6 +93,9 @@
     userId: "7d65b420-483f-76a0-cca0-cd624467c6c3"
   "find-and-replace": {}
   "fuzzy-finder":
+    ignoredNames: [
+      "dist"
+    ]
     preserveLastSearch: true
     searchAllPanes: true
   "git-diff":
@@ -96,6 +113,7 @@
     showErrorTabLine: true
   "linter-docker": {}
   "linter-eslint":
+    disableWhenNoEslintConfig: false
     globalNodePath: "C:\\Users\\npcharles\\AppData\\Roaming\\npm"
   "linter-gcc":
     execPath: "C:\\msys64\\usr\\bin\\gcc.exe"
@@ -109,6 +127,9 @@
   "local-history": {}
   "markdown-preview":
     useGitHubStyle: true
+  minimap:
+    absoluteMode: true
+    adjustAbsoluteModeHeight: true
   "one-dark-ui": {}
   "package-sync":
     forceOverwrite: true
@@ -125,6 +146,13 @@
     storePasswordsUsingKeytar: true
   "remote-sync": {}
   "symbols-tree-view": {}
+  "terminal-panel-uoa":
+    shell: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe /start"
+  "terminal-plus":
+    core:
+      shell: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
+    toggles:
+      autoClose: true
   "todo-show": {}
   "trailing-spaces":
     enableForIndentation: true
