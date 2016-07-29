@@ -69,8 +69,8 @@
   'ctrl-shift-e': 'editor:select-to-end-of-line'
 
 '.platform-win32, .platform-linux':
-  'alt-\'': 'tree-view:toggle-focus'
-  'ctrl-\'': 'tree-view:toggle'
+  'alt-1': 'tree-view:toggle-focus'
+  'ctrl-1': 'tree-view:toggle'
   'alt-p l': 'project-manager:list-projects'
   'alt-p e': 'project-manager:edit-projects'
   'alt-p s': 'project-manager:save-project'
@@ -112,18 +112,11 @@
   'ctrl-w +': 'window:increase-font-size'
   'ctrl-w -': 'window:decrease-font-size'
   'ctrl-w *': 'window:reset-font-size'
-  'ctrl-1': 'pane:show-item-1'
-  'ctrl-2': 'pane:show-item-2'
-  'ctrl-3': 'pane:show-item-3'
-  'ctrl-4': 'pane:show-item-4'
-  'ctrl-5': 'pane:show-item-5'
-  'ctrl-6': 'pane:show-item-6'
-  'ctrl-7': 'pane:show-item-7'
-  'ctrl-8': 'pane:show-item-8'
-  'ctrl-9': 'pane:show-item-9'
   'ctrl-w alt-left': 'pane:move-item-left'
   'ctrl-w alt-right': 'pane:move-item-right'
   'ctrl-o': 'unset!'
+  'ctrl-shift-w': 'unset!'
+  'alt-f4': 'window:close'
 
 'atom-workspace atom-pane':
   'ctrl-alt-=': 'unset!'
