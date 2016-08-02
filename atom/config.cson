@@ -18,7 +18,7 @@
       "5": true
   "atom-alignment": {}
   "atom-terminal":
-    app: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
+    app: "/bin/bash"
     surpressDirectoryArgument: false
   "atom-terminal-panel": {}
   "atom-typescript":
@@ -52,7 +52,7 @@
       "process-palette"
       "autocomplete-python"
       "python-tools"
-      "python-jedi"
+      "welcome"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -76,6 +76,7 @@
       "atom-terminal-panel"
       "terminal-status"
       "web-lookup"
+      "emmet"
     ]
     themes: [
       "one-dark-ui"
