@@ -1,3 +1,6 @@
-#nvim
+# nvim
 nvim/plugged
 nvim/autoload
+
+*~
+*.log

@@ -1,34 +1,33 @@
-#!/bin/bash
+#!/bin/sh
 
-CONFIG_HOME="$(dirname -z $0)"
-
-# create the symlinks
-"$CONFIG_HOME"/scripts/link.sh
-
-
-# install softwares (need sudo)
-NO_INSTALL=$1
-if [ ! "$NO_INSTALL" ]; then
-	"$CONFIG_HOME"/scripts/software_install.sh
+# check if root
+UID=$(id -u)
+if [ "$UID" != 0 ]; then
+	echo "Please run as root"
+	exit 0
 fi
 
-# install prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
+NO_INSTALL=$1
+CONFIG_HOME=$(dirname $(readlink -f $0))
 
-# install fuzzy finder
-git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME"/.fzf
-"$HOME"/.fzf/install
+# delete log
+rm -f "$CONFIG_HOME"/install.log
 
-# install vim-plug
-curl -fLo "$CONFIG_HOME"/nvim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# install softwares
+if [ ! "$NO_INSTALL" ]; then
+	sudo sh "$CONFIG_HOME"/scripts/software_install.sh
+fi
 
 # vm configurations
 if [ "$IS_VM" ]; then
-	"$CONFIG_HOME"/scripts/vm_install.sh
+	sudo sh "$CONFIG_HOME"/scripts/vm_install.sh
 fi
+
+# create the symlinks
+sudo zsh "$CONFIG_HOME"/scripts/link.sh
 
 # end message
 echo "Installation done"
 echo "Please logout for changes to take effect"
 echo "Use PlugInstall and UpdateRemotePlugins in nvim to get plugins working"
+echo "Use package-sync in atom to synchronize packages"

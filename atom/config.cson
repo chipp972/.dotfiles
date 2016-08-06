@@ -53,6 +53,8 @@
       "autocomplete-python"
       "python-tools"
       "welcome"
+      "linter-pylint"
+      "python-jedi"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -77,7 +79,9 @@
       "terminal-status"
       "web-lookup"
       "emmet"
+      "platformio-ide-terminal"
     ]
+    projectHome: "/home/chipp/Documents"
     themes: [
       "one-dark-ui"
       "base16-tomorrow-dark-theme"
@@ -135,6 +139,9 @@
   "package-sync":
     forceOverwrite: true
   "pdf-view": {}
+  "platformio-ide-terminal":
+    core:
+      shell: "/usr/bin/zsh"
   "project-manager":
     closeCurrent: true
     sortBy: "group"
@@ -150,10 +157,10 @@
   "terminal-panel-uoa":
     shell: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe /start"
   "terminal-plus":
-    core:
-      shell: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
+    core: {}
     toggles:
       autoClose: true
+      runInsertedText: false
   "todo-show": {}
   "trailing-spaces":
     enableForIndentation: true

@@ -11,11 +11,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # environement variables
-export XDG_CONFIG_HOME="$HOME/.dotfiles"
 export TERM="xterm-256color"
 export EDITOR="nvim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
+export PAGER='less'
 
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='nvim'
@@ -26,6 +26,5 @@ setopt RM_STAR_WAIT PRINT_EXIT_VALUE ALIASES
 setopt CDABLEVARS CORRECT HISTIGNOREDUPS NOCLOBBER
 
 # aliases
-alias ssh_nivose="ssh pierrech@nivose.informatique.univ-paris-diderot.fr"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

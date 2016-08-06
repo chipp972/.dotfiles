@@ -1,6 +1,6 @@
 [user]
 	email = pierrecharles.nicolas@gmail.com
-	name = Pierre-Charles Nicolas 
+	name = Pierre-Charles Nicolas
 [push]
 	default = simple
 [core]
@@ -33,4 +33,3 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-	
