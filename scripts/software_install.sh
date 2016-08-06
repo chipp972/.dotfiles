@@ -67,3 +67,4 @@ sudo apt-get update
 sudo chown -R $(whoami) "$HOME/.zprezto"
 sudo chown -R $(whoami) "$HOME/.fzf"
 sudo chown -R $(whoami) "$CONFIG_HOME/nvim"
+sudo chown -R $(whoami) "$HOME/.atom"
