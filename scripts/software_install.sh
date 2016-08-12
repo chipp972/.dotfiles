@@ -62,7 +62,7 @@ sudo npm install -g pm2 mocha istanbul
 sudo apt-get autoremove -y
 sudo apt-get upgrade -y
 sudo apt-get update
-cd "$HOME/zprezto" && git pull && git submodule update --init --recursive 
+cd "$HOME/.zprezto" && git pull && git submodule update --init --recursive 
 
 # permissions
 sudo chown -R $(whoami) "$HOME/.zprezto"
