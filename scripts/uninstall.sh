@@ -1,10 +1,16 @@
-#!/bin/bash
+#!/bin/zsh
 
-rm -f $HOME/.z*
-rm -f $HOME/.gitconfig
-rm -f $HOME/.tmux.conf
-rm -rf $HOME/.zprezto
+setopt EXTENDED_GLOB
 
-$HOME/.fzf/uninstall
-rm -rf $HOME/.fzf
+# delete all links
+for rcfile in "$CONFIG_HOME"/rcfiles/^README.md(.N)
+do
+	rm -f "$HOME/.${rcfile:t}"
+done
 
+# uninstall fzf
+"$HOME/.fzf/uninstall"
+rm -rf "$HOME/.fzf"
+
+# uninstall zprezto
+rm -rf "$HOME/.zprezto"

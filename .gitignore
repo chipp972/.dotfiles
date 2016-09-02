@@ -1,4 +1,4 @@
-#nvim
+# nvim
 nvim/plugged
 nvim/autoload
 nvim/.netrwhist
@@ -7,3 +7,6 @@ chromium
 gtk*
 configstore
 ibus
+
+*~
+*.log

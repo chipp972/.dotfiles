@@ -53,6 +53,8 @@
       "autocomplete-python"
       "python-tools"
       "welcome"
+      "linter-pylint"
+      "python-jedi"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -77,8 +79,9 @@
       "terminal-status"
       "web-lookup"
       "emmet"
+      "platformio-ide-terminal"
     ]
-    projectHome: "/home/npcharles/Documents"
+    projectHome: "/home/chipp/Documents"
     themes: [
       "one-dark-ui"
       "base16-tomorrow-dark-theme"
@@ -121,9 +124,6 @@
     execPath: "C:\\msys64\\usr\\bin\\gcc.exe"
     gccDefaultCFlags: "-W -Wall -std=c99"
     gccIncludePaths: "., ./include"
-  "linter-jshint":
-    executablePath: "C:\\Users\\npcharles\\AppData\\Roaming\\npm\\jshint.cmd"
-    lintInlineJavaScript: true
   "linter-pug":
     projectConfigFile: ".pug-lintrc"
   "linter-pylint":
@@ -138,6 +138,9 @@
   "package-sync":
     forceOverwrite: true
   "pdf-view": {}
+  "platformio-ide-terminal":
+    core:
+      shell: "/usr/bin/zsh"
   "project-manager":
     closeCurrent: true
     sortBy: "group"
@@ -153,12 +156,12 @@
   "terminal-panel":
     shell: "/usr/bin/zsh"
   "terminal-panel-uoa":
-    shell: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe /start"
+    shell: "/usr/bin/zsh"
   "terminal-plus":
-    core:
-      shell: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
+    core: {}
     toggles:
       autoClose: true
+      runInsertedText: false
   "todo-show": {}
   "trailing-spaces":
     enableForIndentation: true

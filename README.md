@@ -5,7 +5,7 @@ My configuration files and automatic installation scripts
 To install:
 ```
 git clone https://github.com/chipp972/.dotfiles
-sh .dotfiles/install.sh
+sudo sh .dotfiles/install.sh
 ```
 To uninstall:
 ```
@@ -20,4 +20,3 @@ rm -rf .dotfiles
 *   add configurations for vim plugins + snippets + syntax
 *   find a way to auto update and download vim plugins
 *   list all shortcuts
-
