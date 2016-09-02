@@ -18,7 +18,7 @@
       "5": true
   "atom-alignment": {}
   "atom-terminal":
-    app: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe"
+    app: "/bin/bash"
     surpressDirectoryArgument: false
   "atom-terminal-panel": {}
   "atom-typescript":
@@ -52,7 +52,7 @@
       "process-palette"
       "autocomplete-python"
       "python-tools"
-      "python-jedi"
+      "welcome"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -76,7 +76,9 @@
       "atom-terminal-panel"
       "terminal-status"
       "web-lookup"
+      "emmet"
     ]
+    projectHome: "/home/npcharles/Documents"
     themes: [
       "one-dark-ui"
       "base16-tomorrow-dark-theme"
@@ -91,6 +93,7 @@
     tabLength: 2
   "exception-reporting":
     userId: "7d65b420-483f-76a0-cca0-cd624467c6c3"
+  "file-icons": {}
   "find-and-replace": {}
   "fuzzy-finder":
     ignoredNames: [
@@ -113,7 +116,6 @@
     showErrorTabLine: true
   "linter-docker": {}
   "linter-eslint":
-    disableWhenNoEslintConfig: false
     globalNodePath: "C:\\Users\\npcharles\\AppData\\Roaming\\npm"
   "linter-gcc":
     execPath: "C:\\msys64\\usr\\bin\\gcc.exe"
@@ -122,6 +124,8 @@
   "linter-jshint":
     executablePath: "C:\\Users\\npcharles\\AppData\\Roaming\\npm\\jshint.cmd"
     lintInlineJavaScript: true
+  "linter-pug":
+    projectConfigFile: ".pug-lintrc"
   "linter-pylint":
     pythonPath: "C:\\Python27_32\\python.exe"
   "local-history": {}
@@ -146,6 +150,8 @@
     storePasswordsUsingKeytar: true
   "remote-sync": {}
   "symbols-tree-view": {}
+  "terminal-panel":
+    shell: "/usr/bin/zsh"
   "terminal-panel-uoa":
     shell: "C:\\Users\\npcharles\\Documents\\cmder\\Cmder.exe /start"
   "terminal-plus":

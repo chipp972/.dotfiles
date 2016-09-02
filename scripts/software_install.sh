@@ -23,9 +23,9 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 
 # additionals softwares
 ## languages
-sudo apt-get install golang markdown gcc
+sudo apt-get install golang markdown gcc -g
 ## linters
-sudo apt-get install shellcheck pylint
+sudo apt-get install shellcheck pylint -g
 sudo npm install jsonlint -g
 
 # change default shell to zsh
