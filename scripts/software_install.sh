@@ -22,14 +22,6 @@ sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 
-<<<<<<< HEAD
-# additionals softwares
-## languages
-sudo apt-get install golang markdown gcc -g
-## linters
-sudo apt-get install shellcheck pylint -g
-sudo npm install jsonlint -g
-=======
 # install nodejs
 NODE_INSTALLED=$(command -v node)
 if [ "$IS_LINUX" -a ! "$NODE_INSTALLED" ]; then
@@ -52,7 +44,6 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezt
 # install fuzzy finder
 git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME"/.fzf
 "$HOME"/.fzf/install -y
->>>>>>> 0164958375e767a7b31f9766723ac341e6031571
 
 # install vim-plug
 sudo curl -fLo "$CONFIG_HOME"/nvim/autoload/plug.vim --create-dirs \
