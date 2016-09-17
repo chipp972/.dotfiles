@@ -46,9 +46,9 @@
 '.platform-win32, .platform-linux':
   'alt-1': 'tree-view:toggle-focus'
   'ctrl-1': 'tree-view:toggle'
-  'alt-p l': 'project-manager:list-projects'
-  'alt-p e': 'project-manager:edit-projects'
-  'alt-p s': 'project-manager:save-project'
+  'ctrl-p l': 'project-manager:list-projects'
+  'ctrl-p e': 'project-manager:edit-projects'
+  'ctrl-p s': 'project-manager:save-project'
   'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
   'ctrl-t': 'fuzzy-finder:toggle-file-finder'
   'alt-g o': 'fuzzy-finder:toggle-git-status-finder'

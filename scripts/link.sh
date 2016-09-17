@@ -26,13 +26,12 @@ do
 		rm -f "$HOME/.atom/${config:t}"
 		ln -s "$config" "$HOME/.atom/${config:t}"
 		echo "linked $config with $HOME/.atom/${config:t}" >> "$CONFIG_HOME/install.log"
-
-		# to synchronize packages in atom
-		if [ ! $PACKAGESYNC ]; then
-			apm install package-sync
-			echo "installed package-sync for atom" >> "$CONFIG_HOME/install.log"
-		fi
 done
+# to synchronize packages in atom
+if [ ! $PACKAGESYNC ]; then
+	apm install package-sync
+	echo "installed package-sync for atom" >> "$CONFIG_HOME/install.log"
+fi
 
 # change default shell to zsh
 chsh -s /bin/zsh

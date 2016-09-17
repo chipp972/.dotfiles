@@ -39,6 +39,7 @@
   core:
     audioBeep: false
     autoHideMenuBar: true
+    destroyEmptyPanes: false
     disabledPackages: [
       "dev-live-reload"
       "spell-check"
