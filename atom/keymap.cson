@@ -17,8 +17,6 @@
   'shift-tab': 'snippets:previous-tab-stop'
   'tab': 'snippets:next-tab-stop'
   'ctrl-alt-[': 'unset!'
-  'ctrl-down': 'unset!'
-  'ctrl-up': 'unset!'
   'ctrl-up': 'line-jumper:move-up'
   'ctrl-down': 'line-jumper:move-down'
   'ctrl-shift-up': 'line-jumper:select-up'

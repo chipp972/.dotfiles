@@ -28,10 +28,9 @@ if [ "$IS_LINUX" -a ! "$NODE_INSTALLED" ]; then
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
   sudo apt-get install -y nodejs build-essential
 fi
-sudo npm install -g nodemon typescript tslint jsonlint webpack webpack-dev-server
 
 # install atom
-ATOM_INSTALLED=$(command -v atom)
+ATOM_INSTALLED=$(command -v atom atom-beta)
 if [ "$IS_LINUX" -a ! "$ATOM_INSTALLED" ]; then
   sudo add-apt-repository ppa:webupd8team/atom
   sudo apt-get update
@@ -51,12 +50,6 @@ sudo curl -fLo "$CONFIG_HOME"/nvim/autoload/plug.vim --create-dirs \
 
 # linters
 sudo apt-get install shellcheck pylint -y
-sudo npm install -g eslint tslint jsonlint eslint-config-standard
-sudo npm install -g eslint-plugin-promise eslint-plugin-standard
-sudo npm install -g eslint-plugin-jsdoc eslint-plugin-mocha
-sudo npm install -g eslint-plugin-jsdoc eslint-plugin-react
-sudo npm install -g pty.js # for terminal
-sudo npm install -g pm2 mocha istanbul
 
 # upgrade and update packages
 sudo apt-get autoremove -y
@@ -67,5 +60,5 @@ cd "$HOME/.zprezto" && git pull && git submodule update --init --recursive
 # permissions
 sudo chown -R $(whoami) "$HOME/.zprezto"
 sudo chown -R $(whoami) "$HOME/.fzf"
-sudo chown -R $(whoami) "$CONFIG_HOME/nvim"
+sudo chown -R $(whoami) "$CONFIG_HOME"
 sudo chown -R $(whoami) "$HOME/.atom"
