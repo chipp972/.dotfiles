@@ -58,12 +58,12 @@
   'ctrl-\\': 'symbols-tree-view:toggle'
 
 '.platform-linux atom-workspace, .platform-win32 atom-workspace':
-  'alt-t t': 'platformio-ide-terminal:toggle'
-  'alt-t n': 'platformio-ide-terminal:new'
-  'alt-t w': 'platformio-ide-terminal:close'
-  'alt-t 1': 'platformio-ide-terminal:prev'
-  'alt-t =': 'platformio-ide-terminal:next'
-  'alt-t f': 'platformio-ide-terminal:fullscreen'
+  'alt-t t': 'terminal-fusion:toggle'
+  'alt-t n': 'terminal-fusion:new'
+  'alt-t w': 'terminal-fusion:close'
+  'alt-t 1': 'terminal-fusion:prev'
+  'alt-t =': 'terminal-fusion:next'
+  'alt-t f': 'terminal-fusion:fullscreen'
 
 '.platform-win32 atom-text-editor[data-grammar="source python"]:not(.mini)':
   'ctrl-shift-g': 'autocomplete-python:go-to-definition'

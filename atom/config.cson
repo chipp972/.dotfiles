@@ -51,7 +51,6 @@
       "language-babel"
       "language-javascript-jsx"
       "process-palette"
-      "autocomplete-python"
       "python-tools"
       "welcome"
       "linter-pylint"
@@ -81,6 +80,7 @@
       "web-lookup"
       "emmet"
       "platformio-ide-terminal"
+      "terminal-fusion"
     ]
     projectHome: "/home/chipp/Documents"
     themes: [
@@ -154,6 +154,9 @@
     storePasswordsUsingKeytar: true
   "remote-sync": {}
   "symbols-tree-view": {}
+  "terminal-fusion":
+    toggles:
+      autoClose: true
   "terminal-panel":
     shell: "/usr/bin/zsh"
   "terminal-panel-uoa":
