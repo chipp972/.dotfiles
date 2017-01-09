@@ -1,76 +1,10 @@
-'atom-workspace atom-text-editor:not([mini])[data-grammar^="source ts"]':
-  'ctrl-shift-M': 'unset!'
+# My Keybindings
+#
+# Important note :
+# Selector's name must be unique (eg 'body').
+# The last selector's declaration will override the others.
 
-'atom-workspace atom-text-editor':
-  'ctrl-a': 'editor:move-to-first-character-of-line'
-  'ctrl-alt-d': 'api-docs:search-under-cursor'
-  'ctrl-alt-shift-a': 'core:select-all'
-  'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
-  'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
-  'alt-b': 'unset!'
-  'alt-f': 'unset!'
-
-'atom-workspace atom-text-editor:not([mini])':
-  'alt-e': 'linter:next-error'
-  'ctrl-space': 'snippets:expand'
-  'alt-shift-S': 'snippets:available'
-  'shift-tab': 'snippets:previous-tab-stop'
-  'tab': 'snippets:next-tab-stop'
-  'ctrl-alt-[': 'unset!'
-  'ctrl-up': 'line-jumper:move-up'
-  'ctrl-down': 'line-jumper:move-down'
-  'ctrl-shift-up': 'line-jumper:select-up'
-  'ctrl-shift-down': 'line-jumper:select-down'
-  'alt-down': 'multi-cursor:expandDown'
-  'alt-up': 'multi-cursor:expandUp'
-  'alt-shift-down': 'multi-cursor:move-last-cursor-down'
-  'alt-shift-right': 'multi-cursor:move-last-cursor-right'
-  'alt-shift-left':  'multi-cursor:move-last-cursor-left'
-  'alt-shift-up':    'multi-cursor:move-last-cursor-up'
-
-'.available-snippets atom-text-editor[mini]':
-  'alt-shift-S': 'snippets:available'
-
-'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
-  'ctrl-i': 'find-and-replace:select-next'
-  'ctrl-shift-i': 'find-and-replace:select-skip'
-  'ctrl-e': 'editor:move-to-end-of-screen-line'
-  'ctrl-f': 'find-and-replace:use-selection-as-find-pattern'
-  'ctrl-shift-M': 'bracket-matcher:select-inside-brackets'
-  'ctrl-o': 'advanced-open-file:toggle'
-  'ctrl-shift-a': 'editor:select-to-first-character-of-line'
-  'ctrl-shift-e': 'editor:select-to-end-of-line'
-
-'.platform-win32, .platform-linux':
-  'alt-1': 'tree-view:toggle-focus'
-  'ctrl-1': 'tree-view:toggle'
-  'ctrl-p l': 'project-manager:list-projects'
-  'ctrl-p e': 'project-manager:edit-projects'
-  'ctrl-p s': 'project-manager:save-project'
-  'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
-  'ctrl-t': 'fuzzy-finder:toggle-file-finder'
-  'alt-g o': 'fuzzy-finder:toggle-git-status-finder'
-
-'atom-workspace':
-  'alt-b': 'bottom-dock:toggle'
-  'alt-g r': 'open-on-github:repository'
-  'alt-g f': 'open-on-github:file'
-  'ctrl-\\': 'symbols-tree-view:toggle'
-
-'.platform-linux atom-workspace, .platform-win32 atom-workspace':
-  'alt-t t': 'terminal-fusion:toggle'
-  'alt-t n': 'terminal-fusion:new'
-  'alt-t w': 'terminal-fusion:close'
-  'alt-t 1': 'terminal-fusion:prev'
-  'alt-t =': 'terminal-fusion:next'
-  'alt-t f': 'terminal-fusion:fullscreen'
-
-'.platform-win32 atom-text-editor[data-grammar="source python"]:not(.mini)':
-  'ctrl-shift-g': 'autocomplete-python:go-to-definition'
-
-'.tree-view':
-  'shift-r': 'tree-view:rename'
-
+# pane and window
 'body':
   'ctrl-w': 'unset!'
   'ctrl-q': 'unset!'
@@ -100,31 +34,90 @@
 
 'atom-workspace atom-pane':
   'ctrl-alt-=': 'unset!'
+  'f11': 'window:toggle-full-screen'
 
-# Your keymap
-#
-# Atom keymaps work similarly to style sheets. Just as style sheets use
-# selectors to apply styles to elements, Atom keymaps use selectors to associate
-# keystrokes with events in specific contexts. Unlike style sheets however,
-# each selector can only be declared once.
-#
-# You can create a new keybinding in this file by typing "key" and then hitting
-# tab.
-#
-# Here's an example taken from Atom's built-in keymap:
-#
-# 'atom-text-editor':
-#   'enter': 'editor:newline'
-#
-# 'atom-workspace':
-#   'ctrl-shift-p': 'core:move-up'
-#   'ctrl-p': 'core:move-down'
-#
-# You can find more information about keymaps in these guides:
-# * https://atom.io/docs/latest/using-atom-basic-customization#customizing-key-bindings
-# * https://atom.io/docs/latest/behind-atom-keymaps-in-depth
-#
-# This file uses CoffeeScript Object Notation (CSON).
-# If you are unfamiliar with CSON, you can read more about it in the
-# Atom Flight Manual:
-# https://atom.io/docs/latest/using-atom-basic-customization#cson
+# tree navigation
+'.tree-view':
+  'shift-r': 'tree-view:rename'
+
+# diagnostic
+'.platform-darwin, .platform-linux, .platform-win32':
+  'ctrl-2': 'nuclide-diagnostics-ui:toggle-table'
+
+# terminal
+'.platform-linux atom-workspace, .platform-win32 atom-workspace':
+  'alt-t t': 'terminal-fusion:toggle'
+  'alt-t n': 'terminal-fusion:new'
+  'alt-t w': 'terminal-fusion:close'
+  'alt-t 1': 'terminal-fusion:prev'
+  'alt-t =': 'terminal-fusion:next'
+  'alt-t f': 'terminal-fusion:fullscreen'
+
+# project manager
+'.platform-win32, .platform-linux':
+  'ctrl-p l': 'project-manager:list-projects'
+  'ctrl-p a': 'project-manager:edit-projects'
+  'ctrl-p e': 'project-manager:edit-project'
+  'ctrl-p s': 'project-manager:save-project'
+  'ctrl-p u': 'project-manager:update-projects'
+# file tree
+  'ctrl-&': 'tree-view:toggle'
+  'alt-&': 'tree-view:toggle-focus'
+
+# git
+'atom-workspace':
+  'alt-g r': 'open-on-github:repository'
+  'alt-g f': 'open-on-github:file'
+
+# editor
+'.platform-linux atom-workspace atom-text-editor:not([mini])':
+  'ctrl-alt-[': 'unset!'
+  'ctrl-down': 'line-jumper:move-down'
+  'ctrl-up': 'line-jumper:move-up'
+  'ctrl-down': 'line-jumper:move-down'
+  'ctrl-shift-up': 'line-jumper:select-up'
+  'ctrl-shift-down': 'line-jumper:select-down'
+
+'atom-workspace atom-text-editor':
+  'ctrl-a': 'editor:move-to-first-character-of-line'
+  'ctrl-alt-shift-a': 'core:select-all'
+  'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
+  'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
+  'alt-b': 'unset!'
+  'alt-f': 'unset!'
+# snippets and autocomplete
+  'ctrl-space': 'snippets:expand'
+  'ctrl-3': 'snippets:available'
+  'shift-tab': 'snippets:previous-tab-stop'
+  'tab': 'snippets:next-tab-stop'
+
+
+'atom-workspace atom-text-editor:not([mini])':
+  'alt-down': 'multi-cursor:expandDown'
+  'alt-up': 'multi-cursor:expandUp'
+  'alt-shift-down': 'multi-cursor:move-last-cursor-down'
+  'alt-shift-right': 'multi-cursor:move-last-cursor-right'
+  'alt-shift-left':  'multi-cursor:move-last-cursor-left'
+  'alt-shift-up':    'multi-cursor:move-last-cursor-up'
+
+'atom-workspace atom-text-editor:not([mini])[data-grammar^="source ts"]':
+  'ctrl-shift-M': 'unset!'
+
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'ctrl-e': 'editor:move-to-end-of-screen-line'
+  'ctrl-shift-a': 'editor:select-to-first-character-of-line'
+  'ctrl-shift-e': 'editor:select-to-end-of-line'
+  'ctrl-shift-M': 'bracket-matcher:select-inside-brackets'
+
+# fuzzy finder
+'.platform-linux':
+  'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
+  'ctrl-t': 'fuzzy-finder:toggle-file-finder'
+  'alt-g o': 'fuzzy-finder:toggle-git-status-finder'
+  'ctrl-o': 'advanced-open-file:toggle'
+
+# find and replace
+'.platform-linux atom-text-editor':
+  'ctrl-i': 'find-and-replace:select-next'
+  'ctrl-shift-i': 'find-and-replace:select-skip'
+  'ctrl-f': 'find-and-replace:use-selection-as-find-pattern'

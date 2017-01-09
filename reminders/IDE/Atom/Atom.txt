@@ -1,9 +1,0 @@
-# Atom #
-
-## Commands ##
-*   apm -h : help
-*   apm update : update all packages
-*   apm upgrade : upgrade atom
-
-*   apm init --package path/to/package : create a new package
-*   apm init --theme path/to/theme : create a new theme

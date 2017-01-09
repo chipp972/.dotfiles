@@ -1,3 +1,0 @@
-# React.js #
-
-To build UI component

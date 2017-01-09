@@ -24,6 +24,8 @@
   "atom-typescript":
     preferredQuoteCharacter: "'"
   "autoclose-html": {}
+  "autocomplete-modules":
+    babelPluginModuleResolver: true
   "autocomplete-plus":
     confirmCompletion: "enter"
   "autocomplete-python":
@@ -39,22 +41,30 @@
   core:
     audioBeep: false
     autoHideMenuBar: true
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     destroyEmptyPanes: false
     disabledPackages: [
       "dev-live-reload"
       "spell-check"
       "language-objective-c"
       "linter-shellcheck"
-      "autocomplete-go"
-      "go-config"
-      "go-get"
-      "language-babel"
       "language-javascript-jsx"
       "process-palette"
-      "python-tools"
       "welcome"
-      "linter-pylint"
-      "python-jedi"
+      "linter"
+      "tree-view"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -83,6 +93,7 @@
       "terminal-fusion"
     ]
     projectHome: "/home/chipp/Documents"
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "base16-tomorrow-dark-theme"
@@ -135,6 +146,20 @@
   minimap:
     absoluteMode: true
     adjustAbsoluteModeHeight: true
+  nuclide:
+    hyperclick: {}
+    installRecommendedPackages: true
+    "nuclide-file-tree":
+      allowKeyboardPrefixNavigation: false
+      hideIgnoredNames: false
+      showOpenFiles: false
+      showUncommittedChanges: false
+    "nuclide-flow":
+      enableStructuredTypeHints: true
+    "nuclide-health":
+      toolbarJewel: "Memory"
+    "nuclide-home":
+      showHome: false
   "one-dark-ui": {}
   "package-sync":
     forceOverwrite: true
@@ -155,6 +180,8 @@
   "remote-sync": {}
   "symbols-tree-view": {}
   "terminal-fusion":
+    core:
+      workingDirectory: "Project"
     toggles:
       autoClose: true
   "terminal-panel":
@@ -167,11 +194,16 @@
       autoClose: true
       runInsertedText: false
   "todo-show": {}
+  "tool-bar":
+    visible: false
   "trailing-spaces":
     enableForIndentation: true
   "tree-view": {}
   welcome:
     showOnStartup: false
+".ansi.text":
+  editor:
+    softWrapAtPreferredLineLength: true
 ".basic.html.text":
   editor:
     tabLength: 2
