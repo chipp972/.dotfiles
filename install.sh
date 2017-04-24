@@ -24,10 +24,9 @@ if [ "$IS_VM" ]; then
 fi
 
 # create the symlinks
-sudo zsh "$CONFIG_HOME"/scripts/link.sh
+sh "$CONFIG_HOME"/scripts/link.sh
 
 # end message
 echo "Installation done"
-echo "Please logout for changes to take effect"
+echo "Use source ~/.bashrc for changes to take effect"
 echo "Use PlugInstall and UpdateRemotePlugins in nvim to get plugins working"
-echo "Use package-sync in atom to synchronize packages"

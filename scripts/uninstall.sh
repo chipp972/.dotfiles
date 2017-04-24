@@ -1,16 +1,9 @@
-#!/bin/zsh
+#!/bin/sh
 
-setopt EXTENDED_GLOB
+CONFIG_HOME=$(dirname $(dirname $(readlink -f $0)))
 
 # delete all links
-for rcfile in "$CONFIG_HOME"/rcfiles/^README.md(.N)
+for rcfile in $(ls "$CONFIG_HOME"/rcfiles/)
 do
-	rm -f "$HOME/.${rcfile:t}"
+	rm -f "$HOME/.$rcfile"
 done
-
-# uninstall fzf
-"$HOME/.fzf/uninstall"
-rm -rf "$HOME/.fzf"
-
-# uninstall zprezto
-rm -rf "$HOME/.zprezto"

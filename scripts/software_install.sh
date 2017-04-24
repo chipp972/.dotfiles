@@ -1,6 +1,14 @@
 #!/bin/sh
 
 CONFIG_HOME=$(dirname $(dirname $(readlink -f $0)))
+IS_ARCH=$(uname -r | grep -oi 'arch')
+IS_UBUNTU=$(uname -r | grep -oi 'ubuntu')
+
+if [ "$IS_ARCH" ]
+
+elif [ "$IS_UBUNTU" ]
+
+fi
 
 # install softwares
 sudo apt-get install gcc make cmake tig tmux zsh golang markdown -y
@@ -55,7 +63,7 @@ sudo apt-get install shellcheck pylint -y
 sudo apt-get autoremove -y
 sudo apt-get upgrade -y
 sudo apt-get update
-cd "$HOME/.zprezto" && git pull && git submodule update --init --recursive 
+cd "$HOME/.zprezto" && git pull && git submodule update --init --recursive
 
 # permissions
 sudo chown -R $(whoami) "$HOME/.zprezto"
