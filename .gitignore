@@ -11,5 +11,4 @@ ibus
 *~
 *.log
 
-# atom
-atom/packages/
+node_modules

@@ -2,9 +2,22 @@
 
 ## Description ##
 
-My configuration files and automatic installation scripts for linux (debian based OS)
+My configuration files and automatic installation scripts for Arch based OS.
+It will install :
 
-## Utilisation ##
+* yaourt
+* terminator
+*
+
+## Required ##
+
+You need to install git, nodejs and npm :
+
+```bash
+sudo pacman -S git nodejs npm
+```
+
+## Usage ##
 
 To install:
 
@@ -22,9 +35,5 @@ rm -rf .dotfiles
 
 ## Todo ##
 
-* set an option to install the config on systems
-  you don't own (detection of tmux, zsh, vim or nvim etc.)
-* ask for languages to use and download only the right plugins
-* add configurations for vim plugins + snippets + syntax
-* find a way to auto update and download vim plugins
-* list all shortcuts
+* [ ] Ask for languages to use and download only the right plugins
+* [ ] Find a way to auto update and download nvim plugins

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # check if root
 UID=$(id -u)
