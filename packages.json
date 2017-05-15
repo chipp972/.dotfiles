@@ -1,0 +1,30 @@
+{
+  "yaourt": {
+    "terminator": ["dev"],
+    "ttf-fira-code": ["dev"],
+    "htop-vim-solarized-git": ["dev", "server"],
+    "gnome-screensaver": ["dev", "perso"],
+    "vscode": {
+      "cmds": ["--m-arg \"--skipchecksums\" visual-studio-code-insiders"],
+      "opts": ["dev", "default"]
+    },
+    "neovim": ["dev", "server"],
+    "neovim-plug": ["dev", "server"],
+    "xclip": ["dev", "server"],
+    "docker": ["dev", "server"],
+    "docker-compose": ["dev", "server"],
+    "filezilla": ["perso"],
+    "dropbox": ["perso"]
+  },
+
+  "git": {
+    "bashit": {
+      "cmds": [
+        "git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it",
+        "~/.bash_it/install.sh --silent --no-modify-config",
+        "bash-it update"
+      ],
+      "opts": ["dev", "server", "default"]
+    }
+  }
+}
