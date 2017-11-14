@@ -3,5 +3,4 @@ alias vi='nvim'
 alias v='nvim'
 
 xmodmap -e "keycode 66 = Escape"
-xmodmap -e "keycode 49 = grave"
 xmodmap -e "clear Lock"

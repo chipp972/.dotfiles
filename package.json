@@ -4,7 +4,8 @@
   "description": "## Description ##",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node install.js",
+    "test": "tape-watch -r babel-register \"src/**/__tests__/*\""
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,31 @@
   },
   "homepage": "https://github.com/chipp972/.dotfiles#readme",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-runtime": "^6.26.0",
+    "execa": "0.8.0",
     "fs-extra": "^3.0.1",
-    "promised-exec": "^1.0.1",
-    "ramda": "^0.23.0",
-    "ramda-fantasy": "^0.8.0"
+    "listr": "0.13.0",
+    "ramda": "0.25.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "babel-register": "6.26.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "^0.56.0",
+    "prettier": "^1.7.4",
+    "sinon": "4.1.1",
+    "tape": "^4.7.0",
+    "tape-watch": "2.3.0"
   }
 }

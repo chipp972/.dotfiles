@@ -2,7 +2,7 @@
 
 ## Description ##
 
-Configuration files and automatic installation scripts for Arch based OS.
+Configuration files and automatic installation scripts for Ubuntu.
 
 | Package name           | dev | server | perso |
 | ---------------------- | --- | ------ | ----- |
@@ -14,17 +14,17 @@ Configuration files and automatic installation scripts for Arch based OS.
 | htop-vim-solarized-git |  X  |    X   |       |
 | docker                 |  X  |    X   |       |
 | docker-compose         |  X  |    X   |       |
-| gnome-screensaver      |  X  |        |   X   |
 | vscode-insiders        |  X  |        |       |
 
 Note: no option provided => dev + perso
 
 ## Required ##
 
-You need to install yaourt, git, nodejs, npm :
+You need to install git, nodejs, npm :
 
 ```bash
-sudo pacman -Syu yaourt git nodejs npm --noconfirm
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install -y nodejs build-essential git
 ```
 
 ## Usage ##
