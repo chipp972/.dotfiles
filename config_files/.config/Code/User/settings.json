@@ -205,7 +205,7 @@
         "b"
       ],
       "commands": [
-        "bookmarks.list"
+        "bookmarks.listFromAllFiles"
       ]
     }
   ],
