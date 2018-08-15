@@ -1,6 +1,0 @@
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
-
-xmodmap -e "keycode 66 = Escape"
-xmodmap -e "clear Lock"

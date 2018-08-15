@@ -1,32 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# check if root
-UID=$(id -u)
-if [ "$UID" != 0 ]; then
-	echo "Please run as root"
-	exit 0
-fi
+export CONFIG_HOME=$(dirname $(readlink -f $0))
 
-NO_INSTALL=$1
-CONFIG_HOME=$(dirname $(readlink -f $0))
+# install configs and softwares
+bash "$CONFIG_HOME"/src/install/config.sh
+bash "$CONFIG_HOME"/src/install/software.sh
 
-# delete log
-rm -f "$CONFIG_HOME"/install.log
+# Add setup to .bashrc
+echo "export CONFIG_HOME=$CONFIG_HOME" > "$HOME"/.bashrc
+echo "source "$CONFIG_HOME"/setup.sh" >> "$HOME"/.bashrc
 
-# install softwares
-if [ ! "$NO_INSTALL" ]; then
-	sudo sh "$CONFIG_HOME"/scripts/software_install.sh
-fi
+# reload bashrc
+source "$HOME"/.bashrc
 
-# vm configurations
-if [ "$IS_VM" ]; then
-	sudo sh "$CONFIG_HOME"/scripts/vm_install.sh
-fi
-
-# create the symlinks
-sh "$CONFIG_HOME"/scripts/link.sh
+# install latest node and npm
+nvm install
+# update bash-it and enable plugins
+bash-it update
+bash-it enable plugin base alias-completion extract git node nvm ssh
 
 # end message
 echo "Installation done"
-echo "Use source ~/.bashrc for changes to take effect"
-echo "Use PlugInstall and UpdateRemotePlugins in nvim to get plugins working"
