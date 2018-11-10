@@ -14,8 +14,3 @@ let g:javascript_plugin_flow = 1
 let g:vim_jsx_pretty_enable_jsx_highlight = 1
 let g:vim_jsx_pretty_colorful_config = 1
 
-" prettier config
-
-let g:prettier#config#bracket_spacing='true'
-let g:prettier#config#print_width=80
-let g:prettier#config#arrow_parens='always'
