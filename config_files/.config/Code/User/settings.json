@@ -35,10 +35,8 @@
   "editor.fontFamily": "'Fira Code', monospace, 'Droid Sans Mono', 'Courier New', 'Droid Sans Fallback'",
   "editor.renderWhitespace": "boundary",
   "editor.fontLigatures": true,
-  "eslint.autoFixOnSave": false,
-  "prettier.singleQuote": true,
-  "prettier.printWidth": 80,
-  "prettier.arrowParens": "always",
+  "eslint.autoFixOnSave": true,
+  "tslint.autoFixOnSave": true,
   "prettier.eslintIntegration": true,
   "todohighlight.isCaseSensitive": false,
   "editor.wordBasedSuggestions": false,
@@ -71,13 +69,6 @@
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
-  "vim.statusBarColorControl": true,
-  "vim.statusBarColors.normal": "#8FBCBB",
-  "vim.statusBarColors.insert": "#BF616A",
-  "vim.statusBarColors.visual": "#B48EAD",
-  "vim.statusBarColors.visualline": "#B48EAD",
-  "vim.statusBarColors.visualblock": "#A3BE8C",
-  "vim.statusBarColors.replace": "#D08770",
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -211,7 +202,7 @@
   ],
   // language specific
   "javascript.format.enable": true,
-  "javascript.validate.enable": false,
+  "javascript.validate.enable": true,
   "[typescript]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
@@ -220,27 +211,13 @@
   // project manager
   "projectManager.groupList": true,
   "projectManager.vscode.baseFolders": [
-    "/media/nico/Data"
+    "/home/chipp972/Documents"
   ],
   // git lens
-  "gitlens.advanced.messages": {
-    "suppressCommitHasNoPreviousCommitWarning": false,
-    "suppressCommitNotFoundWarning": false,
-    "suppressFileNotUnderSourceControlWarning": false,
-    "suppressGitVersionWarning": false,
-    "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true,
-    "suppressUpdateNotice": false,
-    "suppressWelcomeNotice": true
-  },
-  "gitlens.keymap": "none",
-  "gitlens.historyExplorer.enabled": true,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#8FBCBB",
-    "statusBar.noFolderBackground": "#8FBCBB",
-    "statusBar.debuggingBackground": "#8FBCBB",
-    "statusBar.foreground": "#434C5E"
+    "statusBar.foreground":"#000",
+    "statusBar.background": "#666666",
+    "statusBar.noFolderBackground": "#BF616A",
+    "statusBar.debuggingBackground": "#BF616A"
   }
 }

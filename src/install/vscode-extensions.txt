@@ -23,3 +23,5 @@ shinnn.stylelint
 wix.vscode-import-cost
 christian-kohler.path-intellisense
 ofhumanbondage.react-proptypes-intellisense
+ryanluker.vscode-coverage-gutters
+
