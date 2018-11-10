@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 
-# git
+# git and utils
 
-sudo apt install -y git git-flow
-
-# htop
-
-sudo snap install htop
+sudo apt install -y git git-flow htop xclip
 
 # nvm
 if [ ! -d "$HOME"/.nvm ]; then
@@ -15,16 +11,28 @@ fi
 
 # browser
 
-sudo snap install chromium
+if [ -z "$(which chromium-browser)" ]; then
+  sudo apt install chromium
+fi
 
 # vscode
 
-sudo snap install vscode --channel=edge
-EXTENSIONS=$(cat "$CONFIG_HOME"/src/install/vscode-extensions.txt)
-for ext in $EXTENSIONS
-do
-  code --install-extension $ext
-done
+installExtensions () { # $1 = code | code-insiders
+  EXTENSIONS="$(cat "$CONFIG_HOME"/src/install/vscode-extensions.txt)"
+  for ext in $EXTENSIONS
+  do
+    $1 --install-extension $ext
+  done
+}
+
+if [ -n "$(which code)" ]; then
+  installExtensions "code"
+elif [ -n "$(which code-insiders)" ]; then
+  installExtensions "code-insiders"
+else
+  sudo apt install -y code-insiders
+  installExtensions "code-insiders"
+fi
 
 # bash-it
 
@@ -34,16 +42,16 @@ if [ ! -d "$HOME"/.bash_it ]; then
 fi
 
 # install neovim
-sudo apt install -y neovim
+if [ -z "$(which vim)" ]; then
+  sudo apt install -y neovim
 
-# vim-plug
-VIM_AUTOLOAD_FOLDER="$HOME"/.local/share/nvim/site/autoload
-mkdir -p $VIM_AUTOLOAD_FOLDER
-wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-mv plug.vim $VIM_AUTOLOAD_FOLDER/
+  # vim-plug
+  VIM_AUTOLOAD_FOLDER="$HOME"/.local/share/nvim/site/autoload
+  mkdir -p $VIM_AUTOLOAD_FOLDER
+  wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  mv plug.vim $VIM_AUTOLOAD_FOLDER/
 
-# vim plugin install
-vim +PlugInstall +qall
+  # vim plugin install
+  vim +PlugInstall +qall
+fi
 
-# xclip
-sudo apt install -y xclip
