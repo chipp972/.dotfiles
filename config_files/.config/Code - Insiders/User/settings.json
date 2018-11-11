@@ -211,7 +211,7 @@
   // project manager
   "projectManager.groupList": true,
   "projectManager.vscode.baseFolders": [
-    "/home/chipp972/Documents"
+    "{PROJECT_FOLDER}"
   ],
   // git lens
   "workbench.colorCustomizations": {

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Path to the bash it configuration
-export BASH_IT="/home/chipp972/.bash_it"
+export BASH_IT="$HOME/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -12,7 +12,7 @@ export BASH_IT_THEME='bobby'
 # export BASH_IT_REMOTE='bash-it'
 
 # Your place for hosting Git repos. I use this for private repos.
-export GIT_HOSTING='git@github.com:chipp972'
+# export GIT_HOSTING='git@github.com:chipp972'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK

@@ -5,8 +5,8 @@
 sudo apt install -y git git-flow htop xclip
 
 # nvm
-if [ ! -d "$HOME"/.nvm ]; then
-  git clone https://github.com/creationix/nvm.git "$HOME"/.nvm
+if [ ! -d "$HOME/.nvm" ]; then
+  git clone https://github.com/creationix/nvm.git "$HOME/.nvm"
 fi
 
 # browser
@@ -18,10 +18,11 @@ fi
 # vscode
 
 installExtensions () { # $1 = code | code-insiders
-  EXTENSIONS="$(cat "$CONFIG_HOME"/src/install/vscode-extensions.txt)"
-  for ext in $EXTENSIONS
+  VSCODE_EXECUTABLE=$1
+  PLUGINS=$(cat "$CONFIG_HOME/src/install/vscode-extensions.txt")
+  for plugin in $PLUGINS
   do
-    $1 --install-extension $ext
+    $VSCODE_EXECUTABLE --install-extension $plugin
   done
 }
 
@@ -36,9 +37,9 @@ fi
 
 # bash-it
 
-if [ ! -d "$HOME"/.bash_it ]; then
-  git clone --depth=1 https://github.com/Bash-it/bash-it.git "$HOME"/.bash_it
-  source "$HOME"/.bash_it/install.sh --silent --no-modify-config
+if [ ! -d "$HOME/.bash_it" ]; then
+  git clone --depth=1 https://github.com/Bash-it/bash-it.git "$HOME/.bash_it"
+  source "$HOME/.bash_it/install.sh" --silent --no-modify-config
 fi
 
 # install neovim

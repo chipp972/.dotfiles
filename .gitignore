@@ -12,3 +12,4 @@ ibus
 *.log
 
 node_modules
+tmp
