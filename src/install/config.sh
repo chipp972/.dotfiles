@@ -28,11 +28,11 @@ done
 PROJECT_FOLDER=$(sed 's/\//\\\//g' <<< "$PROJECT_FOLDER")
 
 # put personalized config files in a temporary folder
-rm -rf "$CONFIG_HOME/tmp"
-cp -a "$CONFIG_HOME/config_files/." "$CONFIG_HOME/tmp"
+rm -rf "$CONFIG_HOME"/tmp
+cp -a "$CONFIG_HOME"/config_files/. "$CONFIG_HOME"/tmp
 
 # replace placeholders
-find "$CONFIG_HOME/tmp" -type f -print0 | while IFS= read -r -d '' file
+find "$CONFIG_HOME"/tmp -type f -print0 | while IFS= read -r -d '' file
 do
   sed -i "s/{PROJECT_FOLDER}/$PROJECT_FOLDER/g" "$file"
   sed -i "s/{GIT_EMAIL}/$GIT_EMAIL/g" "$file"
@@ -41,8 +41,8 @@ do
 done
 
 # copy personalized config files and remove temporary folder
-cp -a "$CONFIG_HOME/tmp/." "$HOME"
-rm -rf "$CONFIG_HOME/tmp"
+cp -a "$CONFIG_HOME"/tmp/. "$HOME"
+rm -rf "$CONFIG_HOME"/tmp"
 
 # font install
 fc-cache -f -v

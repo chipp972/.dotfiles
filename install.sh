@@ -10,11 +10,11 @@ do
 done
 
 # Add setup to .bashrc
-echo "export CONFIG_HOME=$CONFIG_HOME" > "$HOME/.bashrc"
-echo "source "$CONFIG_HOME"/setup.sh" >> "$HOME/.bashrc"
+echo "export CONFIG_HOME=$CONFIG_HOME" > "$HOME"/.bashrc
+echo "source "$CONFIG_HOME"/setup.sh" >> "$HOME"/.bashrc
 
 # reload bashrc
-source "$HOME/.bashrc"
+source "$HOME"/.bashrc
 
 # install latest node and npm
 nvm install
