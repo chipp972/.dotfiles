@@ -42,7 +42,7 @@ done
 
 # copy personalized config files and remove temporary folder
 cp -a "$CONFIG_HOME"/tmp/. "$HOME"
-rm -rf "$CONFIG_HOME"/tmp"
+rm -rf "$CONFIG_HOME"/tmp
 
 # font install
 fc-cache -f -v

@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+# update system
+sudo apt update
+sudo apt upgrade -y
+
+# install snap if missing
+if [ -z "$(which snap)" ]; then 
+  sudo apt install snapd
+  echo "Please logout update the path then re-run the script"
+  exit 0
+fi
+
 export CONFIG_HOME=$(dirname $(readlink -f $0))
 
 # install configs and softwares

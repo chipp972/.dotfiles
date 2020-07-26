@@ -2,7 +2,11 @@
 
 # git and utils
 
-sudo apt install -y git git-flow htop xclip
+sudo apt install -y git make curl build-essential openssl libssl-dev unzip
+
+sudo snap install snap-store htop
+sudo snap install --classic code-insiders
+sudo snap install --classic flutter
 
 # nvm
 if [ ! -d "$HOME"/.nvm ]; then
@@ -11,28 +15,10 @@ fi
 
 # browser
 
-if [ -z "$(which chromium-browser)" ]; then
-  sudo apt install chromium
-fi
-
-# vscode
-
-installExtensions () { # $1 = code | code-insiders
-  VSCODE_EXECUTABLE=$1
-  PLUGINS=$(cat "$CONFIG_HOME"/src/install/vscode-extensions.txt)
-  for plugin in $PLUGINS
-  do
-    $VSCODE_EXECUTABLE --install-extension $plugin
-  done
-}
-
-if [ -n "$(which code)" ]; then
-  installExtensions "code"
-elif [ -n "$(which code-insiders)" ]; then
-  installExtensions "code-insiders"
-else
-  sudo apt install -y code-insiders
-  installExtensions "code-insiders"
+if [ -z "$(which google-chrome)" ]; then
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  sudo apt install ./google-chrome-stable_current_amd64.deb
+  rm ./google-chrome-stable_current_amd64.deb
 fi
 
 # bash-it
@@ -44,7 +30,7 @@ fi
 
 # install neovim
 if [ -z "$(which vim)" ]; then
-  sudo apt install -y neovim
+  sudo snap install --classic --beta nvim
 
   # vim-plug
   VIM_AUTOLOAD_FOLDER="$HOME"/.local/share/nvim/site/autoload

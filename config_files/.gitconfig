@@ -21,6 +21,7 @@
   ps = push
   df = diff
   co = checkout
+  pf = push --force
   commitam = commit --amend -C HEAD
   r = rebase
   l = log --pretty=oneline -n 20 --graph --abbrev-comit
@@ -28,7 +29,6 @@
   la = log --color --graph --online --decorate --all --
   pldev = pull --rebase origin dev
   pssu = push --set-upstream origin @{upstream}
-  psf = push --force origin @{upstream}
 [color]
   ui = auto
 [color "branch"]
